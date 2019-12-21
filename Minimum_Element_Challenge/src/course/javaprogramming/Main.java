@@ -17,6 +17,7 @@ public class Main {
     private static int findMin(int[] myArray) {
         int min = myArray[0];
         for (int i = 0; i < myArray.length ; i++) {
+
             if(myArray[i] < min){
                 min = myArray[i];
             }
@@ -29,6 +30,7 @@ public class Main {
         System.out.println("type " + count + " integers");
         int[] array = new int[count];
         for (int i = 0; i < array.length; i++) {
+            System.out.println("Enter a number:");
             array[i] = sc.nextInt();
         }
         System.out.println("thanks");
