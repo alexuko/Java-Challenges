@@ -9,7 +9,7 @@ public class Contact {
         this.mobileNumber = mobileNumber;
     }
 
-    public void setName(String name) {
+public void setName(String name) {
         this.name = name;
     }
 
