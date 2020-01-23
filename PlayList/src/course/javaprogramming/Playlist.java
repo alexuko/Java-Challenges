@@ -76,19 +76,28 @@ public class Playlist {
                     }
                     break;
                 case 4:// REMOVE FROM PLAYLIST some code here
-                    if(!listOfSongs.isEmpty()){
-                        if(isGoingForward){
-                            //place pointer before
+                    if(isGoingForward){
+                        //place pointer before
+                        if(li.hasPrevious()){
                             li.previous();
                             //select song to be removed
                             System.out.println("Removed:\t" + li.next());
-
-                        }else {
-                            //place listIterator pointer after
-                            li.next();
-                            //select song to be removed
-                            System.out.println("Removed:\t" + li.previous());
+                        }else{
+                            System.out.println("Start of the list");
+                            break;
                         }
+                    }else {
+                        //place listIterator pointer after
+                        if(li.hasNext()){
+                            //select song to be removed
+                            li.next();
+                            System.out.println("Removed:\t" + li.previous());
+                        }else{
+                            System.out.println("End of the list");
+                            break;
+                        }
+                    }
+                    if(!listOfSongs.isEmpty()){
                         li.remove();
                     }else if(listOfSongs.isEmpty()){
                         //if empty
