@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
         Player alex = new Player("Alex", 50, 100);
-        System.out.println(alex.toString());
+        System.out.println(alex);
 
         saveObject(alex);
         alex.setHitPoints(40);
@@ -16,8 +16,13 @@ public class Main {
         alex.setWeapon("ak-47");
         alex.setStrength(100);
         saveObject(alex);
-        loadObject(alex);
+        //loadObject(alex);
         System.out.println(alex);
+
+        ISaveable vampire = new Monster("vampire", 50,50);
+        System.out.println("Strength "+((Monster) vampire).getStrength());
+        System.out.println(vampire);
+        saveObject(vampire);
     }
 
     public static ArrayList<String> readValues() {
