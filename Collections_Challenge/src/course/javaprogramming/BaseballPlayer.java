@@ -1,7 +1,7 @@
 package course.javaprogramming;
 
-public class BasquetballPlayer extends Player {
-    public BasquetballPlayer(String name) {
+public class BaseballPlayer extends Player {
+    public BaseballPlayer(String name) {
         super(name);
     }
 }

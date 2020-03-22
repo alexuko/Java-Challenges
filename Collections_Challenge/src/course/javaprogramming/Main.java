@@ -1,4 +1,6 @@
+
 package course.javaprogramming;
+import java.awt.*;
 
 public class Main {
 
@@ -10,7 +12,7 @@ public class Main {
         Team<FootBallPlayer> america = new Team<>("America");
         Team<FootBallPlayer> pumas = new Team<>("Pumas");
 
-        Team<BasquetballPlayer> bulls = new Team<>("Bulls");
+        Team<BaseballPlayer> bulls = new Team<>("Bulls");
 
         footballLeague.add_team(chivas);
         footballLeague.add_team(america);

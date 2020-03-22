@@ -1,6 +1,6 @@
 package course.javaprogramming;
 
-public abstract class Player {
+public class Player {
     private String name;
 
     public Player(String name) {

@@ -60,8 +60,8 @@ public class MyLinkedList implements NodeList {
 
     @Override
     public boolean removeItem(Item item) { // item "Colima"
-        if(item == null){
-            System.out.println("Invalid");
+        if(item != null){
+            System.out.println("removing" + item.getValue());
             return false;
         }
         Item current = this.root;
