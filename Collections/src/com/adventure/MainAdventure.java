@@ -10,29 +10,33 @@ public class MainAdventure {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        locations.put(5,new Location(5,"You are at road "));
-        locations.put(8,new Location(8,"You are at the Forest "));
-        locations.put(4,new Location(4,"You are at the Hill "));
-        locations.put(6,new Location(6,"You are at the Building "));
-        locations.put(2,new Location(2,"You are at the Valley "));
-        locations.put(0,new Location(0,"Exit "));
+        Map<String,Integer> temp = new HashMap<>();
+        locations.put(0,new Location(0,"Exit ", null ));
 
-        locations.get(5).addExit("N",8);
-        locations.get(5).addExit("S",2);
-        locations.get(5).addExit("E",6);
-        locations.get(5).addExit("W",4);
+        temp = new HashMap<>();
+        temp.put("N",8);
+        temp.put("S",2);
+        temp.put("E",6);
+        temp.put("W",4);
+        locations.put(5,new Location(5,"You are at road ", temp ));
 
+        temp = new HashMap<>();
+        temp.put("S",5);
+        temp.put("W",4);
+        locations.put(8,new Location(8,"You are at the Forest ", temp ));
 
-        locations.get(8).addExit("S",5);
-        locations.get(8).addExit("W",4);
+        temp = new HashMap<>();
+        temp.put("N",8);
+        locations.put(4,new Location(4,"You are at the Hill ", temp ));
 
+        temp = new HashMap<>();
+        temp.put("W",4);
+        temp.put("N",5);
+        locations.put(2,new Location(2,"You are at the Valley ", temp ));
 
-        locations.get(4).addExit("N",8);
-
-        locations.get(2).addExit("W",4);
-        locations.get(2).addExit("N",5);
-
-        locations.get(6).addExit("W",5);
+        temp = new HashMap<>();
+        temp.put("W",5);
+        locations.put(6,new Location(6,"You are at the Building ", temp ));
 
         Map<String, String> vocabulary = new HashMap<>();
         vocabulary.put("NORTH", "N");
@@ -45,6 +49,7 @@ public class MainAdventure {
         int loc = 5;
         while (true){
             System.out.println(locations.get(loc).getDescription());
+            temp.remove("S");
             if(loc == 0) {
                 break;
             }
