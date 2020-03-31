@@ -16,6 +16,8 @@ public class MapProgram {
         System.out.println(lectures.containsKey(0));
 
         System.out.println("========================");
+        lectures.remove(2, "Java");
+        lectures.remove(" ");
         for (int key : lectures.keySet()) {
             System.out.println(key + ": " + lectures.get(key));
 
